@@ -1,7 +1,7 @@
 def checkmate(board_string):
     try:
         # Split string into list of rows
-        board = board_string.strip().splitlines()
+        board = board_string.strip().splitlines() #like split('\n')
         n = len(board)
 
         if not all(len(row) == n for row in board):
@@ -58,6 +58,7 @@ def checkmate(board_string):
                 return
 
         print("Fail")
-
+        
     except Exception:
+        print(f'Invalid input, Please try again')
         return

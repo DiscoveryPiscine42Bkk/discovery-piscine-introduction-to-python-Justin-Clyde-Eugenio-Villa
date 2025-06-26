@@ -11,6 +11,7 @@ P.......
 ........
 ........\
 """
+    # board1 = 123123
     checkmate(board)
 
 if __name__ == "__main__":
