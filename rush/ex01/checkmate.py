@@ -4,9 +4,9 @@ def checkmate(board_string):
     try:
         board_string = board_string.upper()
         # Check other characters
-        charactor = ['.','K','Q','R','B','P','\n']
+        character = ['.','K','Q','R','B','P','\n']
         for c in board_string:
-            if c not in charactor:
+            if c not in character:
                 print(f'This game does not have {c} character, Please try again')
                 return
         
@@ -70,7 +70,7 @@ def checkmate(board_string):
                 
         if threats:
             for piece , y , x in threats:
-                print(f'Success: The {piece} checks the King at ({y} , {x})')
+                print(f'Success: The {piece} checks the King from ({y} , {x})')
         else :
             print('Fail')
         
