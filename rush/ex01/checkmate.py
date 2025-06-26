@@ -2,6 +2,14 @@ from visual_chess import *
 
 def checkmate(board_string):
     try:
+        board_string = board_string.upper()
+        # Check other characters
+        charactor = ['.','K','Q','R','B','P','\n']
+        for c in board_string:
+            if c not in charactor:
+                print(f'This game does not have {c} character, Please try again')
+                return
+        
         # Split string into list of rows
         board = board_string.strip().splitlines() #like split('\n')
         n = len(board)
@@ -58,14 +66,15 @@ def checkmate(board_string):
         for dx in [-1, 1]:
             pi, pj = ki - 1, kj + dx
             if 0 <= pi < n and 0 <= pj < n and board[pi][pj] == 'P':
-                threats.append(('P', y+1 , x+1))
-                return
-
+                threats.append(('P', pi+1 , pj+1))
+                
         if threats:
             for piece , y , x in threats:
                 print(f'Success: The {piece} checks the King at ({y} , {x})')
         else :
             print('Fail')
+        
+        print(f'End program\n')
             
     except Exception:
         print(f'Invalid input, Please try again')
